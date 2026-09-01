@@ -158,22 +158,22 @@ markdown
 
 ### **Functions**
 
-| Function                                  | Description            |
-|-------------------------------------------|------------------------|
-| MacOSWindow_Init()                        | Initialize the library
-| MacOSWindow_Cleanup()                     | Cleanup the library
-| MacOSWindow_Create(config)                | Create a new window
-| MacOSWindow_Destroy(window)               | Destroy a window
-| MacOSWindow_Show(window)                  | Show the window
-| MacOSWindow_Hide(window)                  | Hide the window
-| MacOSWindow_SetDrawCallback(window, cb)   | Set draw callback
-| MacOSWindow_SetCloseCallback(window, cb)  | Set close callback
-| MacOSWindow_SetResizeCallback(window, cb) | Set resize callback
-| MacOSWindow_SetUserData(window, data)     | Set user data
-| MacOSWindow_GetUserData(window)           | Get user data
-| MacOSWindow_GetHWND(window)               | Get Windows handle
-| MacOSWindow_Redraw(window)                | Force redraw
-| MacOSWindow_Run(window)                   | Run message loop
+| Function                                    | Description            |
+|---------------------------------------------|------------------------|
+| `MacOSWindow_Init() `                       | Initialize the library |
+| `MacOSWindow_Cleanup()`                     | Cleanup the library    |
+| `MacOSWindow_Create(config)`                | Create a new window    |
+| `MacOSWindow_Destroy(window)`               | Destroy a window       |
+| `MacOSWindow_Show(window)`                  | Show the window        |
+| `MacOSWindow_Hide(window)`                  | Hide the window        |
+| `MacOSWindow_SetDrawCallback(window, cb)`   | Set draw callback      |
+| `MacOSWindow_SetCloseCallback(window, cb)`  | Set close callback     |
+| `MacOSWindow_SetResizeCallback(window, cb)` | Set resize callback    |
+| `MacOSWindow_SetUserData(window, data)`     | Set user data          |
+| `MacOSWindow_GetUserData(window)`           | Get user data          |
+| `MacOSWindow_GetHWND(window)`               | Get Windows handle     |
+| `MacOSWindow_Redraw(window)`                | Force redraw           |
+| `MacOSWindow_Run(window)`                   | Run message loop       |
 
 ---
 
