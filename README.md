@@ -110,8 +110,8 @@ int main(void) {
 ### Method 1: CMake
 
 ```bash
-git clone https://github.com/USERNAME/macos-window.git
-cd macos-window
+git clone https://github.com/wsl-iq/Caption-Buttons.git
+cd Caption-Buttons
 mkdir build && cd build
 cmake ..
 cmake --build .
@@ -249,10 +249,10 @@ Makefile
 ## FAQ
 
 **Q: Does this work on Windows 10?**
-A: Yes, it works on Windows 7, 10, and 11.
+- A: Yes, it works on Windows 7, 10, and 11.
 
 **Q: Can I use this in commercial projects?**
-A: Yes, it's MIT licensed.
+- A: Yes, it's MIT licensed.
 
 **Q: How do I change the button colors?**
-A: Edit the color constants in `src/macos_window.cpp`.
+- A: Edit the color constants in `src/macos_window.cpp`.
