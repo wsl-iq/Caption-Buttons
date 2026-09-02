@@ -3,10 +3,8 @@
  * @brief macOS Style Window Library for Windows
  * @author Mohammed Al-Baqer
  * @copyright Copyright © 2026 Mohammed Al-Baqer. All rights reserved.
- * 
  * This library provides a frameless window with macOS-style traffic light
  * buttons (red, yellow, green) for Windows applications.
- * 
  * Supports both C and C++.
  */
 
@@ -47,44 +45,22 @@ typedef struct {
     BOOL maximizeHover;                                 /* Internal: maximize button hover */
 } MacOSWindow;
 
-/* Initialize the library (call once at startup) */
-BOOL MacOSWindow_Init(void);
 
-/* Cleanup the library (call once at shutdown) */
-void MacOSWindow_Cleanup(void);
+BOOL MacOSWindow_Init(void);     /* Initialize the library (call once at startup) */
+void MacOSWindow_Cleanup(void); /* Cleanup the library (call once at shutdown) */
+MacOSWindow* MacOSWindow_Create(const MacOSWindowConfig* config); /* Create a new macOS style window */
 
-/* Create a new macOS style window */
-MacOSWindow* MacOSWindow_Create(const MacOSWindowConfig* config);
+void MacOSWindow_Destroy(MacOSWindow* window); /* Destroy a macOS style window */
+void MacOSWindow_Show(MacOSWindow* window);   /* Show the window */
+void MacOSWindow_Hide(MacOSWindow* window);  /* Hide the window */
+void MacOSWindow_SetDrawCallback(MacOSWindow* window, MacOSWindowDrawCallback callback);       /* Set draw callback */
+void MacOSWindow_SetCloseCallback(MacOSWindow* window, MacOSWindowCloseCallback callback);    /* Set close callback */
+void MacOSWindow_SetResizeCallback(MacOSWindow* window, MacOSWindowResizeCallback callback); /* Set resize callback */
+void MacOSWindow_SetUserData(MacOSWindow* window, void* userData); /* Set user data */
+void* MacOSWindow_GetUserData(MacOSWindow* window);               /* Get user data */
 
-/* Destroy a macOS style window */
-void MacOSWindow_Destroy(MacOSWindow* window);
-
-/* Show the window */
-void MacOSWindow_Show(MacOSWindow* window);
-
-/* Hide the window */
-void MacOSWindow_Hide(MacOSWindow* window);
-
-/* Set draw callback */
-void MacOSWindow_SetDrawCallback(MacOSWindow* window, MacOSWindowDrawCallback callback);
-
-/* Set close callback */
-void MacOSWindow_SetCloseCallback(MacOSWindow* window, MacOSWindowCloseCallback callback);
-
-/* Set resize callback */
-void MacOSWindow_SetResizeCallback(MacOSWindow* window, MacOSWindowResizeCallback callback);
-
-/* Set user data */
-void MacOSWindow_SetUserData(MacOSWindow* window, void* userData);
-
-/* Get user data */
-void* MacOSWindow_GetUserData(MacOSWindow* window);
-
-/* Get window handle */
-HWND MacOSWindow_GetHWND(MacOSWindow* window);
-
-/* Force redraw */
-void MacOSWindow_Redraw(MacOSWindow* window);
+HWND MacOSWindow_GetHWND(MacOSWindow* window);                  /* Get window handle */
+void MacOSWindow_Redraw(MacOSWindow* window); /* Force redraw */
 
 /* Run message loop (blocks until window closes) */
 int MacOSWindow_Run(MacOSWindow* window);

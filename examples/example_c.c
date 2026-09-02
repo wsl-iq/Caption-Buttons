@@ -6,9 +6,7 @@
 
 #include "macos_window.h"
 
-/* Draw callback */
-void OnDraw(HDC hdc, int width, int height, void* userData)
-{
+void OnDraw(HDC hdc, int width, int height, void* userData) { /* Draw callback */
     /* Draw your content here */
     RECT rect = {0, 0, width, height};
     HBRUSH brush = CreateSolidBrush(RGB(240, 240, 240));
@@ -26,11 +24,8 @@ void OnDraw(HDC hdc, int width, int height, void* userData)
     );
     
     HGDIOBJ oldFont = SelectObject(hdc, font);
-    
     RECT textRect = {0, height / 2 - 20, width, height / 2 + 20};
-    DrawTextW(hdc, L"Hello from C!", -1, &textRect, 
-              DT_CENTER | DT_VCENTER | DT_SINGLELINE);
-    
+    DrawTextW(hdc, L"Hello from C!", -1, &textRect, DT_CENTER | DT_VCENTER | DT_SINGLELINE);
     SelectObject(hdc, oldFont);
     DeleteObject(font);
 }
@@ -59,18 +54,10 @@ int main(void)
         return -1;
     }
     
-    /* Set draw callback */
-    MacOSWindow_SetDrawCallback(window, OnDraw);
-    
-    /* Show window */
-    MacOSWindow_Show(window);
-    
-    /* Run message loop */
-    int result = MacOSWindow_Run(window);
-    
-    /* Cleanup */
-    MacOSWindow_Destroy(window);
+    MacOSWindow_SetDrawCallback(window, OnDraw); /* Set draw callback */
+    MacOSWindow_Show(window);                   /* Show window */
+    int result = MacOSWindow_Run(window);      /* Run message loop */
+    MacOSWindow_Destroy(window);              /* Cleanup */
     MacOSWindow_Cleanup();
-    
     return result;
 }
