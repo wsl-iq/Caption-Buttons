@@ -1,6 +1,7 @@
 # macOS Window Library for Windows
 
-A lightweight C/C++ library that creates frameless windows with macOS-style traffic light buttons (🔴🟡🟢) on Windows.
+A lightweight C/C++ library for creating frameless Windows applications with macOS-style traffic light window controls (🔴 🟡 🟢), replacing the traditional Windows minimize, maximize, and close buttons (─ ▢ ✕).
+
 
 ## Features
 
